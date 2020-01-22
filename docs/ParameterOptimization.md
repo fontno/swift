@@ -20,7 +20,7 @@ struct MyMLModel {
     var weight1, weight2: Tensor<Float>
     var bias1, bias2: Tensor<Float>
 
-    func call(_ input: Tensor<Float>) {
+    func call(_ input: Tensor<Float>) -> Tensor<Float> {
         let h = relu(input • weight1 + bias1)
         return sigmoid(h • weight2 + bias2)
     }
